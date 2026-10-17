@@ -1,0 +1,49 @@
+{
+  "name": "@pixremove/sdk",
+  "version": "0.1.0",
+  "description": "Official JavaScript / TypeScript SDK for the PixRemove background removal API.",
+  "keywords": [
+    "background-removal",
+    "remove-background",
+    "remove-bg",
+    "removebg",
+    "cutout",
+    "transparent-png",
+    "image",
+    "pixremove"
+  ],
+  "homepage": "https://pixremove.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PixRemove/pixremove-js.git",
+    "directory": "packages/sdk"
+  },
+  "bugs": "https://github.com/PixRemove/pixremove-js/issues",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepack": "pnpm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "pixremove",
+  "version": "0.1.0",
+  "description": "Remove image backgrounds from the command line with PixRemove. Batch whole folders into transparent PNGs.",
+  "keywords": [
+    "background-removal",
+    "remove-background",
+    "remove-bg",
+    "removebg",
+    "cli",
+    "batch",
+    "transparent-png",
+    "pixremove"
+  ],
+  "homepage": "https://pixremove.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PixRemove/pixremove-js.git",
+    "directory": "packages/cli"
+  },
+  "bugs": "https://github.com/PixRemove/pixremove-js/issues",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "pixremove": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && chmod +x dist/cli.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@pixremove/sdk": "workspace:^"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
