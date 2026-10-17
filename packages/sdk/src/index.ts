@@ -5,7 +5,6 @@ export type {
   Account,
   CreatedTask,
   ImageInput,
-  RemovalTier,
   RemoveBackgroundOptions,
   RemoveBackgroundResult,
   Task,

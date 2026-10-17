@@ -59,13 +59,13 @@ Raw PNG or JPEG body, `content-type: image/png | image/jpeg`, under 30 MB.
   "sizeBytes": 123456,
   "width": 1200,
   "height": 800,
-  "tier": "standard",
   "prompt": "only the bag",
   "idempotencyKey": "sdk_3f2a…"
 }
 ```
 
-`tier`, `prompt` and `idempotencyKey` are optional. A repeated
+`prompt` and `idempotencyKey` are optional; `prompt` makes it a guided run
+(more credits). A repeated
 `idempotencyKey` returns the original run (`200`, `replayed: true`) without
 holding credits again.
 

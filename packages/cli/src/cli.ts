@@ -15,7 +15,6 @@ Usage
 
 Options
   -o, --out <dir>         Write results here instead of next to each input
-  -t, --tier <tier>       standard (default) or precise
   -p, --prompt <text>     What to keep, e.g. "only the bag" (guided run)
   -c, --concurrency <n>   Runs at once (default: your account's limit)
       --overwrite         Replace existing -nobg.png files
@@ -31,7 +30,6 @@ async function main(argv: string[]): Promise<number> {
     allowPositionals: true,
     options: {
       out: { type: 'string', short: 'o' },
-      tier: { type: 'string', short: 't' },
       prompt: { type: 'string', short: 'p' },
       concurrency: { type: 'string', short: 'c' },
       overwrite: { type: 'boolean' },
@@ -67,7 +65,7 @@ async function main(argv: string[]): Promise<number> {
     console.log(`Account:      ${account.user?.email ?? '-'}`);
     console.log(`Credits:      ${account.credits ?? 0}`);
     if (account.limits) {
-      console.log(`Per removal:  ${account.limits.removalCost} credits (standard)`);
+      console.log(`Per removal:  ${account.limits.removalCost} credit(s)`);
       console.log(`Concurrency:  ${account.limits.concurrency}`);
     }
     return 0;
@@ -96,7 +94,6 @@ async function main(argv: string[]): Promise<number> {
       }
       try {
         const result = await client.removeBackground(await readFile(file), {
-          tier: values.tier,
           prompt: values.prompt,
           filename: path.basename(file),
         });

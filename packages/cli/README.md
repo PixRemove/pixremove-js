@@ -9,7 +9,6 @@ export PIXREMOVE_API_KEY=your_key   # https://pixremove.com/settings/api-keys
 
 npx pixremove product.jpg                 # → product-nobg.png
 npx pixremove ./photos -o ./cutouts       # every PNG/JPEG in the folder
-npx pixremove ./photos --tier precise     # finer hair and fur edges
 npx pixremove bag.jpg --prompt "only the bag"
 npx pixremove account                     # credits left
 ```
@@ -21,7 +20,6 @@ Or install it once: `npm install -g pixremove`.
 | | |
 |---|---|
 | `-o, --out <dir>` | write results here instead of next to each input |
-| `-t, --tier <tier>` | `standard` (default) or `precise` |
 | `-p, --prompt <text>` | keep only what you describe |
 | `-c, --concurrency <n>` | runs at once (default: your account's limit) |
 | `--overwrite` | replace existing `-nobg.png` files (skipped by default, so re-running only does what is left) |

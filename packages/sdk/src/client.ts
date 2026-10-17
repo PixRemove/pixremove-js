@@ -75,7 +75,6 @@ export class PixRemove {
         sizeBytes: bytes.byteLength,
         width: info.width,
         height: info.height,
-        tier: options.tier,
         prompt: options.prompt,
         idempotencyKey: options.idempotencyKey ?? newIdempotencyKey(),
       },
@@ -130,6 +129,7 @@ export class PixRemove {
       sizeBytes: number;
       width: number;
       height: number;
+      /** Reserved for quality tiers; leave unset. */
       tier?: string;
       prompt?: string;
       idempotencyKey?: string;

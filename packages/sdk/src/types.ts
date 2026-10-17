@@ -1,18 +1,11 @@
 /** Anything that holds the image bytes. File paths are the CLI's job. */
 export type ImageInput = Uint8Array | ArrayBuffer | Blob;
 
-/**
- * Quality tier. `standard` is the default; `precise` costs twice as much and
- * keeps fine edges (hair, fur, glass) better. A `prompt` always runs on the
- * guided tier, whatever is set here.
- */
-export type RemovalTier = 'standard' | 'precise' | (string & {});
-
 export type RemoveBackgroundOptions = {
-  tier?: RemovalTier;
   /**
    * What to keep, in plain words ("only the bag", "the person on the left").
-   * Turns the run into a guided cut-out, priced at the guided tier.
+   * Turns the run into a guided cut-out, which costs more credits than a
+   * standard one.
    */
   prompt?: string;
   /** Shown in the run history on pixremove.com. Defaults to `image.png` / `image.jpg`. */

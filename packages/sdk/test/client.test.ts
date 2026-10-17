@@ -94,7 +94,7 @@ describe('removeBackground', () => {
     ]);
     const client = new PixRemove({ apiKey: 'pr_test', fetch: api.fetch, baseUrl: 'https://x.test/' });
 
-    const result = await client.removeBackground(png(640, 480), { tier: 'precise' });
+    const result = await client.removeBackground(png(640, 480), { prompt: 'only the cat' });
 
     expect(result).toMatchObject({ taskId: 't1', creditsCharged: 2, width: 640, height: 480 });
     expect([...result.data]).toEqual([1, 2, 3]);
@@ -107,7 +107,7 @@ describe('removeBackground', () => {
       width: 640,
       height: 480,
       sizeBytes: 33,
-      tier: 'precise',
+      prompt: 'only the cat',
     });
     expect(start.idempotencyKey).toMatch(/^[A-Za-z0-9_-]{8,64}$/);
     expect(api.calls.at(-1)!.url).toBe('https://x.test/api/tasks/t1/layer/cutout');

@@ -34,8 +34,7 @@ Create an API key at [pixremove.com/settings/api-keys](https://pixremove.com/set
 
 ```ts
 await pixremove.removeBackground(image, {
-  tier: 'precise',          // 'standard' (default) or 'precise' — finer hair, fur and glass edges
-  prompt: 'only the bag',   // keep just what you describe (guided run)
+  prompt: 'only the bag',   // keep just what you describe (guided run, costs more credits)
   filename: 'bag.jpg',      // name shown in your history on pixremove.com
   idempotencyKey: 'order-42-photo-1', // your own retry key
   timeoutMs: 120_000,
@@ -88,7 +87,7 @@ const png = await pixremove.downloadCutout(task);
 |---|---|
 | `X-Api-Key` header | `apiKey` option (sent as `x-api-key`) |
 | `image_file` | `removeBackground(bytes)` |
-| `size` | `tier: 'standard'` or `'precise'` |
+| `size` | not needed — output is the source's full resolution |
 | `type=product / person / car` | not needed — detected automatically; use `prompt` to choose |
 | `GET /account` | `getAccount()` |
 
