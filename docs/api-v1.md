@@ -9,7 +9,8 @@ limits with the website, browser extension and desktop app.
 `x-api-key: <key>` on every request. Keys are created at
 `/settings/api-keys`. An unknown or revoked key
 is `401 unauthenticated`; an account with an unverified email is
-`403 email_not_verified`.
+`403 email_not_verified`; a suspended account is `403 forbidden`. Each key
+allows 300 requests a minute (`429 rate_limit` with `retry-after` beyond that).
 
 ## Errors
 
@@ -81,10 +82,14 @@ holding credits again.
   "errorCode": null,
   "errorMessage": null,
   "canvas": { "width": 1200, "height": 800 },
-  "cutoutPath": "/api/tasks/…/layer/cutout"
+  "cutoutPath": "/api/v1/tasks/…/cutout"
 }
 ```
 
 `status` is `queued | running | succeeded | failed | cancelled`. `cutoutPath`
 is set once the run succeeded; the SDK fetches it relative to the base URL
 with the same `x-api-key` header, and gets a PNG back.
+
+### `GET /api/v1/tasks/:taskId/cutout`
+
+The finished cut-out as `image/png`. `404 not_found` until the run succeeded.
