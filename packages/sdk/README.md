@@ -6,8 +6,6 @@ Official JavaScript / TypeScript SDK for the [PixRemove](https://pixremove.com) 
 - Node 20.19+, Bun, Deno, Cloudflare Workers (server side: keep your API key out of browser code)
 - Waits for the result for you, retries rate limits safely, never charges twice for a retry
 
-> **Preview.** API keys open with the PixRemove developer launch. Until then requests answer `401`.
-
 ## Install
 
 ```bash

@@ -2,8 +2,6 @@
 
 Remove image backgrounds from the command line with [PixRemove](https://pixremove.com). Point it at files or whole folders and get transparent PNGs back.
 
-> **Preview.** API keys open with the PixRemove developer launch.
-
 ```bash
 export PIXREMOVE_API_KEY=your_key   # https://pixremove.com/settings/api-keys
 
