@@ -91,6 +91,10 @@ const png = await pixremove.downloadCutout(task);
 
 Background colour, crop and shadow options are not in the API yet; apply them to the transparent PNG yourself for now.
 
+## HTTP API
+
+The endpoints this SDK calls, with curl examples, are in the [repository README](https://github.com/PixRemove/pixremove-js#http-api).
+
 ## Command line
 
 Need batch processing without writing code? See [`pixremove`](https://www.npmjs.com/package/pixremove):
