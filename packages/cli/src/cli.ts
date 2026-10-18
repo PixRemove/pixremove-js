@@ -5,7 +5,7 @@ import { parseArgs } from 'node:util';
 import { PixRemove, PixRemoveError } from '@pixremove/sdk';
 import { collectImages, outputPath } from './files.js';
 
-const VERSION = '0.1.0';
+const VERSION = '0.1.1';
 
 const HELP = `Remove image backgrounds with PixRemove.
 

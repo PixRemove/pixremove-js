@@ -43,4 +43,4 @@ jobs:
             (cd "$p" && pnpm pack --pack-destination ../../.packs)
           done
           npm publish .packs/pixremove-sdk-*.tgz --access public
-          npm publish .packs/pixremove-[0-9]*.tgz --access public
+          npm publish .packs/pixremove-cli-*.tgz --access public

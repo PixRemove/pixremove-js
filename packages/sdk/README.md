@@ -97,10 +97,10 @@ The endpoints this SDK calls, with curl examples, are in the [repository README]
 
 ## Command line
 
-Need batch processing without writing code? See [`pixremove`](https://www.npmjs.com/package/pixremove):
+Need batch processing without writing code? See [`@pixremove/cli`](https://www.npmjs.com/package/@pixremove/cli):
 
 ```bash
-npx pixremove ./photos -o ./cutouts
+npx @pixremove/cli ./photos -o ./cutouts
 ```
 
 ## License

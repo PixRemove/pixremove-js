@@ -1,17 +1,22 @@
-# pixremove
+# @pixremove/cli
 
 Remove image backgrounds from the command line with [PixRemove](https://pixremove.com). Point it at files or whole folders and get transparent PNGs back.
 
 ```bash
 export PIXREMOVE_API_KEY=your_key   # https://pixremove.com/settings/api-keys
 
-npx pixremove product.jpg                 # → product-nobg.png
-npx pixremove ./photos -o ./cutouts       # every PNG/JPEG in the folder
-npx pixremove bag.jpg --prompt "only the bag"
-npx pixremove account                     # credits left
+npx @pixremove/cli product.jpg              # → product-nobg.png
 ```
 
-Or install it once: `npm install -g pixremove`.
+Or install it once and use the `pixremove` command:
+
+```bash
+npm install -g @pixremove/cli
+
+pixremove ./photos -o ./cutouts       # every PNG/JPEG in the folder
+pixremove bag.jpg --prompt "only the bag"
+pixremove account                     # credits left
+```
 
 ## Options
 

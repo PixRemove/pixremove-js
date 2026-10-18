@@ -1,6 +1,6 @@
 {
-  "name": "pixremove",
-  "version": "0.1.0",
+  "name": "@pixremove/cli",
+  "version": "0.1.1",
   "description": "Remove image backgrounds from the command line with PixRemove. Batch whole folders into transparent PNGs.",
   "keywords": [
     "background-removal",

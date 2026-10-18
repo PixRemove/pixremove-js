@@ -1,6 +1,6 @@
 {
   "name": "@pixremove/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Official JavaScript / TypeScript SDK for the PixRemove background removal API.",
   "keywords": [
     "background-removal",

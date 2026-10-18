@@ -244,7 +244,7 @@ export class PixRemove {
   }
 }
 
-const USER_AGENT = 'pixremove-js/0.1.0';
+const USER_AGENT = 'pixremove-js/0.1.1';
 
 async function toError(response: Response): Promise<PixRemoveError> {
   let body: { error?: { code?: string; message?: string; details?: unknown } } = {};

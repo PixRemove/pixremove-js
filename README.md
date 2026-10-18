@@ -5,7 +5,7 @@ Remove image backgrounds from your own code, scripts and pipelines with [PixRemo
 | Package | |
 |---|---|
 | [`@pixremove/sdk`](packages/sdk) | TypeScript SDK: `removeBackground(image)` returns a transparent PNG |
-| [`pixremove`](packages/cli) | Command line: `npx pixremove ./photos` cuts out a whole folder |
+| [`@pixremove/cli`](packages/cli) | Command line: `npx @pixremove/cli ./photos` cuts out a whole folder |
 
 Prefer plain HTTP, or another language? The [HTTP API](#http-api) section below is everything the SDK uses.
 
@@ -107,12 +107,13 @@ const png = await pixremove.downloadCutout(task);
 ## Command line
 
 ```bash
+npm install -g @pixremove/cli     # or prefix each command with npx @pixremove/cli
 export PIXREMOVE_API_KEY=pr_...
 
-npx pixremove product.jpg                       # writes product-nobg.png
-npx pixremove ./photos -o ./cutouts             # every PNG/JPEG in the folder
-npx pixremove bag.jpg --prompt "only the bag"   # guided run
-npx pixremove account                           # credits left
+pixremove product.jpg                       # writes product-nobg.png
+pixremove ./photos -o ./cutouts             # every PNG/JPEG in the folder
+pixremove bag.jpg --prompt "only the bag"   # guided run
+pixremove account                           # credits left
 ```
 
 | option | |
